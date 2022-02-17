@@ -16,7 +16,7 @@
                 android:id="@+id/idIVQrcode"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                android:contentDescription="test" />
+                android:contentDescription="qrcode" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="40dp"

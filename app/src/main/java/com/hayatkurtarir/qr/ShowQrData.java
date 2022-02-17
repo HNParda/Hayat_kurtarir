@@ -46,7 +46,7 @@ public class ShowQrData extends Activity {
         InfoString(R.id.dis, R.string.dis, params[3]);
         InfoString(R.id.blood, R.string.blood, params[4]);
         Log.e("testtest", params[5]);
-        if (!(params[5].equals(" empty"))) {
+        if (!(params[5].contains("empty"))) {
             InfoString(R.id.note, R.string.note, decode(params[5]));
         }
     }
