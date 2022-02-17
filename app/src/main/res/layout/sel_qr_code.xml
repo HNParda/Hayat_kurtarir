@@ -42,35 +42,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="170dp"
-            android:layout_marginTop="40dp"
-            android:orientation="vertical"
-            android:onClick="CreQrCode2"
-            android:layout_height="170dp"
-            android:foreground="?android:selectableItemBackground"
-            app:cardBackgroundColor="@color/ButtonBackground"
-            app:cardCornerRadius="18dp" >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_height="match_parent" >
-                <ImageView
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_marginTop="-28dp"
-                    android:src="@drawable/qrkod" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:textSize="18sp"
-                    android:layout_marginTop="-25dp"
-                    android:text="@string/qr_olustur"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
     </LinearLayout>
 
     <LinearLayout

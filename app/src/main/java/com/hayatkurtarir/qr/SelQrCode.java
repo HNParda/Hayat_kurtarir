@@ -27,11 +27,6 @@ public class SelQrCode extends AppCompatActivity {
         Intent i = new Intent(this, CreQrCode.class);
         startActivity(i);
     }
-    public void CreQrCode2(View view) {
-        Intent i = new Intent(this, CreQrCode.class);
-        i.putExtra("a", "a");
-        startActivity(i);
-    }
 
 
     public void QrCodeList(View view) {

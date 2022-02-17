@@ -37,11 +37,8 @@ public class CreQrCode extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getIntent().getExtras() != null) {
-            setContentView(R.layout.cre_qr_code2);
-        } else {
         setContentView(R.layout.cre_qr_code);
-        }
+
         Name = findViewById(R.id.name);
         Num = findViewById(R.id.num);
         Birthday = findViewById(R.id.birthday);
