@@ -1,26 +1,16 @@
 package com.hayatkurtarir.qr;
 
-import android.app.Activity;
 import androidx.appcompat.app.AlertDialog;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import android.util.Xml;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.hayatkurtarir.R;
-
-import java.io.Console;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
@@ -61,19 +51,16 @@ public class CreQrCode extends AppCompatActivity {
         }
     }
     DialogInterface.OnClickListener ClickListener() {
-        return new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (i == -1) {
-                    infos = infos + " yes";
-                } else {
-                    infos = infos + " no";
-                }
-                Intent qr = new Intent(getApplicationContext(), ShowQrCode.class);
-                Log.e("StringCheck", infos);
-                qr.putExtra("URL", "hayatkurtarir.com/" + infos);
-                startActivity(qr);
+        return (dialogInterface, i) -> {
+            if (i == -1) {
+                infos = infos + " yes";
+            } else {
+                infos = infos + " no";
             }
+            Intent qr = new Intent(getApplicationContext(), ShowQrCode.class);
+            Log.e("StringCheck", infos);
+            qr.putExtra("URL", "hayatkurtarir.com/" + infos);
+            startActivity(qr);
         };
     }
     public boolean checkFields() {
@@ -106,11 +93,6 @@ public class CreQrCode extends AppCompatActivity {
         return Base64.encodeToString(s.getBytes(), Base64.DEFAULT).replace("\n", "");
     }
     public static String decode(String s)  {
-        try {
-            return new String(Base64.decode(s, Base64.DEFAULT), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-            return "Decode String failed";
-        }
+        return new String(Base64.decode(s, Base64.DEFAULT), StandardCharsets.UTF_8);
     }
 }

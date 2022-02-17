@@ -4,14 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import android.view.KeyEvent;
-
 import com.google.zxing.client.android.R;
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
-/**
- *
- */
 public class ReadQrCode extends Activity {
     private CaptureManager capture;
     private DecoratedBarcodeView barcodeScannerView;
@@ -19,22 +15,15 @@ public class ReadQrCode extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         barcodeScannerView = initializeContent();
-
         capture = new CaptureManager(this, barcodeScannerView);
         capture.initializeFromIntent(getIntent(), savedInstanceState);
         capture.decode();
     }
 
-    /**
-     * Override to use a different layout.
-     *
-     * @return the DecoratedBarcodeView
-     */
     protected DecoratedBarcodeView initializeContent() {
         setContentView(R.layout.zxing_capture);
-        return (DecoratedBarcodeView)findViewById(R.id.zxing_barcode_scanner);
+        return findViewById(R.id.zxing_barcode_scanner);
     }
 
     @Override
@@ -62,7 +51,7 @@ public class ReadQrCode extends Activity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         capture.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 

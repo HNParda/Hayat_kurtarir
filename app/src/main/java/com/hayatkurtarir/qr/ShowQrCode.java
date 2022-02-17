@@ -1,7 +1,6 @@
 package com.hayatkurtarir.qr;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -33,10 +32,10 @@ public class ShowQrCode extends Activity {
             display.getSize(point);
             int width = point.x;
             int height = point.y;
-            int dimen = width < height ? width : height;
-            dimen = dimen * 3 / 4;
+            int dimen = Math.min(width, height);
+            dimen = dimen * 5;
             String infos = getIntent().getExtras().getString("URL").replace(", ", "+");
-        infos = infos.replace(" ", "")
+            infos = infos.replace(" ", "")
                      .replace("[", "")
                      .replace("]", "");
             qrgEncoder = new QrEncoder(infos, null, QrEncoder.QrContents.Type.TEXT, dimen);
