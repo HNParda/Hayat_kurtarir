@@ -84,7 +84,7 @@ public class CreQrCode extends AppCompatActivity {
                 " " + Name.getText().toString().replace(" ", "-s"),
                 Num.getText().toString().replace("+", "-p"),
                 Birthday.getText().toString(),
-                Dis.getText().toString(),
+                encode(Dis.getText().toString()),
                 Blood.getText().toString().replace("+", "-p")};
 
 

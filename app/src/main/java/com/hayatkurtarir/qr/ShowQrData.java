@@ -21,6 +21,8 @@ import java.util.ListIterator;
 
 public class ShowQrData extends Activity {
 
+    boolean SafeQrCode;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +39,14 @@ public class ShowQrData extends Activity {
                  .replace("-s", " ")
                  .replace("-p", "+")
                  .replace("[", "")
-                 .replace("]", "") + "&empty";
+                 .replace("]", "");
 
         String[] params = url.toString().split("\\&");
+        SafeQrCode = params[6].matches("yes");
         InfoString(R.id.name, R.string.name, params[0]);
         InfoString(R.id.num, R.string.emergency_num, params[1]);
         InfoString(R.id.birthday, R.string.birthday, params[2]);
-        InfoString(R.id.dis, R.string.dis, params[3]);
+        InfoString(R.id.dis, R.string.dis, decode(params[3]) + String.valueOf(SafeQrCode));
         InfoString(R.id.blood, R.string.blood, params[4]);
         Log.e("testtest", params[5]);
         if (!(params[5].contains("empty"))) {
