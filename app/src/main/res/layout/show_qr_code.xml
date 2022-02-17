@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="-100dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/idIVQrcode"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:contentDescription="test" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_gravity="bottom|end"
+                android:layout_height="40dp"
+                app:cardCornerRadius="90dp"
+                app:cardBackgroundColor="@color/ButtonBackground">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/downloadbtn"
+                android:contentDescription="Resmi kaydet" />
+            </androidx.cardview.widget.CardView>
+
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>
