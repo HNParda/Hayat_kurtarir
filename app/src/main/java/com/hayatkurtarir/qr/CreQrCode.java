@@ -53,8 +53,8 @@ public class CreQrCode extends AppCompatActivity {
             AD.setCancelable(true)
                     .setTitle("Qr Kod kaydedilsin mi?")
                     .setMessage("Başkaları bu Qr Kodu okutduğunda Listelerinde Kayıtlı kalsın mı?")
-                    .setNegativeButton(R.string.hayir, ClickListener())
-                    .setPositiveButton(R.string.evet, ClickListener())
+                    .setNegativeButton(R.string.no, ClickListener())
+                    .setPositiveButton(R.string.yes, ClickListener())
                     .create().show();
         } else {
             Toast.makeText(CreQrCode.this, getApplicationContext().getResources().getString(R.string.empty_input), Toast.LENGTH_SHORT).show();
