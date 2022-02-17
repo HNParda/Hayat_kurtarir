@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Saves lifes</string>
+    <string name="app_name">Saves lives</string>
     <string name="name">"Name:"</string>
+    <string name="num">Phone number to\ncall on emergencies:</string>
+    <string name="bday">"Birthday:"</string>
     <string name="dis">"Diseases:"</string>
     <string name="blood">"Blood group:"</string>
-    <string name="emergency_num">Phone number to\ncall on emergencies:</string>
-    <string name="bday">"Birthday:"</string>
-    <string name="qr_olustur">Create QR Code</string>
-    <string name="qr_kod_oku">Read QR Code</string>
+    <string name="cre_qr_code">Create QR Code</string>
+    <string name="read_qr_code">Read QR Code</string>
     <string name="dis_hint">Asthma / None</string>
     <string name="genbtn">Generate</string>
     <string name="empty_input">Please fill in all Fields.</string>
-    <string name="unsuported_link">This is not a life saving Qr Code!</string>
-    <string name="hayir">Yes</string>
-    <string name="evet">No</string>
+    <string name="unsup_link">This is not a life saving Qr Code!</string>
+    <string name="no">Yes</string>
+    <string name="yes">No</string>
     <string name="note">Note:</string>
+    <string name="reg_qr_codes">Registered QR Codes</string>
 </resources>

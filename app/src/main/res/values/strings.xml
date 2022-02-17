@@ -1,17 +1,18 @@
 <resources>
     <string name="app_name">Hayat kurtarır</string>
     <string name="name">İsim:</string>
-    <string name="emergency_num">Acil durumda\narancak Numara:</string>
+    <string name="num">Acil durumda\narancak Numara:</string>
     <string name="bday">Doğum Günü:</string>
     <string name="dis">Hastalıklar:</string>
     <string name="blood">Kan grubu:</string>
-    <string name="qr_olustur">QR Kod Oluştur</string>
-    <string name="qr_kod_oku">QR Kod Oku</string>
+    <string name="cre_qr_code">QR Kod Oluştur</string>
+    <string name="read_qr_code">QR Kod Oku</string>
     <string name="dis_hint">Astım / Yok</string>
     <string name="genbtn">Oluştur</string>
     <string name="empty_input">Lütfen tüm alanları doldurunuz.</string>
-    <string name="unsuported_link">Bu Qr Kod Hayat kurtaran Qr Kod değil!</string>
-    <string name="hayir">Hayir</string>
-    <string name="evet">Evet</string>
+    <string name="unsup_link">Bu Qr Kod Hayat kurtaran Qr Kod değil!</string>
+    <string name="no">Hayir</string>
+    <string name="yes">Evet</string>
     <string name="note">Not:</string>
+    <string name="reg_qr_codes">Kayitli Qr Kodlar</string>
 </resources>
