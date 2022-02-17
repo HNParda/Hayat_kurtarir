@@ -37,7 +37,7 @@ public class ShowQrData extends Activity {
         SafeQrCode = params[6].matches("yes");
         InfoString(R.id.name, R.string.name, params[0]);
         InfoString(R.id.num, R.string.emergency_num, params[1]);
-        InfoString(R.id.birthday, R.string.birthday, params[2]);
+        InfoString(R.id.bday, R.string.bday, params[2]);
         InfoString(R.id.dis, R.string.dis, decode(params[3]) + SafeQrCode);
         InfoString(R.id.blood, R.string.blood, params[4]);
         Log.e("testtest", params[5]);
