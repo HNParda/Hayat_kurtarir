@@ -39,12 +39,12 @@ public class ShowQrCode extends Activity {
                      .replace("[", "")
                      .replace("]", "");
             qrgEncoder = new QrEncoder(infos, null, QrEncoder.QrContents.Type.TEXT, dimen);
-            try {
-                bitmap = qrgEncoder.encodeAsBitmap();
-                qrCodeIV.setImageBitmap(bitmap);
-            } catch (WriterException e) {
-                Log.e("Tag", e.toString());
-            }
+        try {
+            bitmap = qrgEncoder.encodeAsBitmap();
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+        qrCodeIV.setImageBitmap(bitmap);
     }
 
 }
