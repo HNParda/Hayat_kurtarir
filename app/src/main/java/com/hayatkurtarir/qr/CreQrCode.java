@@ -18,7 +18,7 @@ public class CreQrCode extends AppCompatActivity {
 
     private EditText Name;
     private EditText Num;
-    private EditText Birthday;
+    private EditText Bday;
     private EditText Dis;
     private EditText Blood;
     private EditText Note;
@@ -31,7 +31,7 @@ public class CreQrCode extends AppCompatActivity {
 
         Name = findViewById(R.id.name);
         Num = findViewById(R.id.num);
-        Birthday = findViewById(R.id.birthday);
+        Bday = findViewById(R.id.bday);
         Dis = findViewById(R.id.dis);
         Blood = findViewById(R.id.blood);
         Note = findViewById(R.id.note);
@@ -46,8 +46,6 @@ public class CreQrCode extends AppCompatActivity {
                     .setNegativeButton(R.string.no, ClickListener())
                     .setPositiveButton(R.string.yes, ClickListener())
                     .create().show();
-        } else {
-            Toast.makeText(CreQrCode.this, getApplicationContext().getResources().getString(R.string.empty_input), Toast.LENGTH_SHORT).show();
         }
     }
     DialogInterface.OnClickListener ClickListener() {
@@ -70,7 +68,7 @@ public class CreQrCode extends AppCompatActivity {
         String[] tempS = new String[]{
                 " " + Name.getText().toString().replace(" ", "-s"),
                 Num.getText().toString().replace("+", "-p"),
-                Birthday.getText().toString(),
+                Bday.getText().toString(),
                 encode(Dis.getText().toString()),
                 Blood.getText().toString().replace("+", "-p")};
 
@@ -86,10 +84,32 @@ public class CreQrCode extends AppCompatActivity {
         }
 
         Log.e("StringCheck", infos);
-        return !infos.contains(" ,");
+        if (!infos.contains(" ,")) {
+            if (!Name.getText().toString().contains(" ")) {
+                Toast.makeText(CreQrCode.this, getApplicationContext().getResources().getString(R.string.name_wrong_input), Toast.LENGTH_LONG).show();
+                return false;
+            }
+            if (!Bday.getText().toString().contains(".")) {
+                Toast.makeText(CreQrCode.this, getApplicationContext().getResources().getString(R.string.bday_wrong_input), Toast.LENGTH_LONG).show();
+                return false;
+            }
+            return checkBlood();
+        } else {
+            Toast.makeText(CreQrCode.this, getApplicationContext().getResources().getString(R.string.empty_input), Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+    private boolean checkBlood() {
+        if (!Blood.getText().toString().contains("+")||!Blood.getText().toString().contains("-")) {
+            Toast.makeText(CreQrCode.this, getApplicationContext().getResources().getString(R.string.blood_wrong_input), Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 
     public static String encode(String s) {
+
         return Base64.encodeToString(s.getBytes(), Base64.DEFAULT).replace("\n", "");
     }
     public static String decode(String s)  {

@@ -15,4 +15,7 @@
     <string name="yes">No</string>
     <string name="note">Note:</string>
     <string name="reg_qr_codes">Registered QR Codes</string>
+    <string name="bday_wrong_input">Hatali Dogum Günü girdiniz</string>
+    <string name="name_wrong_input" >Hatali Isim girdiniz</string>
+    <string name="blood_wrong_input">Hatali Kan grubu girdiniz</string>
 </resources>
