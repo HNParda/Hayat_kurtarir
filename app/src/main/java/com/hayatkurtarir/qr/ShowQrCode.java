@@ -41,8 +41,8 @@ public class ShowQrCode extends Activity {
             qrgEncoder = new QrEncoder(infos, null, QrEncoder.QrContents.Type.TEXT, dimen);
         try {
             bitmap = qrgEncoder.encodeAsBitmap();
-        } catch (WriterException ee) {
-            ee.printStackTrace();
+        } catch (WriterException e) {
+            e.printStackTrace();
         }
         qrCodeIV.setImageBitmap(bitmap);
     }
