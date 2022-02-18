@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hayat kurtarır</string>
     <string name="name">İsim:</string>
-    <string name="num">Acil durumda\narancak Numara:</string>
+    <string name="num">Acil durumda arancak Numara:</string>
     <string name="bday">Doğum Günü:</string>
     <string name="dis">Hastalıklar:</string>
     <string name="blood">Kan grubu:</string>

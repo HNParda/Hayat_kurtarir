@@ -6,7 +6,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.util.Linkify;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import com.hayatkurtarir.R;
@@ -35,20 +38,22 @@ public class ShowQrData extends Activity {
 
         String[] params = url.split("&");
         SafeQrCode = params[6].matches("yes");
-        InfoString(R.id.name, R.string.name, params[0]);
-        InfoString(R.id.num, R.string.num, params[1]);
-        InfoString(R.id.bday, R.string.bday, params[2]);
-        InfoString(R.id.dis, R.string.dis, decode(params[3]) + SafeQrCode);
-        InfoString(R.id.blood, R.string.blood, params[4]);
+        setText(R.id.name, params[0]);
+        setText(R.id.num, params[1]);
+        setText(R.id.bday, params[2]);
+        setText(R.id.dis, decode(params[3]));
+        setText(R.id.blood, params[4]);
         Log.e("testtest", params[5]);
         if (!(params[5].contains("empty"))) {
-            InfoString(R.id.note, R.string.note, decode(params[5]));
+            setText(R.id.note, getResources().getString(R.string.note) + " " );
+            setText(R.id.note_i, decode(params[5]));
+            findViewById(R.id.note_ll).setVisibility(View.VISIBLE);
         }
     }
 
     @SuppressLint("SetTextI18n")
-    void InfoString(int ResId, int StringId, String params) {
-            ((TextView)(findViewById(ResId))).setText(getResources().getString(StringId) + " " + params);
+    void setText(int ResId, String params) {
+            ((TextView)(findViewById(ResId))).setText(params);
 
     }
 }
